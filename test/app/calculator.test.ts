@@ -10,7 +10,7 @@ import * as sinonChai from 'sinon-chai';
 import { expect } from 'chai';
 chai.use(sinonChai);
 
-describe('Calculator', () => {
+describe.only('Calculator', () => {
   let container: Container;
   let calculatorService: Calculator;
 
@@ -46,6 +46,12 @@ describe('Calculator', () => {
     expect(addMock).to.have.been.calledWith(0, 30);
     // expect(result).eq(1500);
 
+  });
+
+  it('multiply3', () => {
+    const addMock = sinon.stub(calculatorService, 'add');
+    const result = calculatorService.multiply(-5, 0);
+    expect(addMock).to.have.been.callCount(0);
   });
 
   describe('divide', () => {

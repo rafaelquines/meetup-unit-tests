@@ -18,6 +18,9 @@ export class Calculator implements CalculatorBase {
     for(let i = 0; i < b; i++) {
       result = this.add(result, a);
     }
+    if(a < 0) {
+      console.log("menor que zero");
+    }
     return result;
   }
 
